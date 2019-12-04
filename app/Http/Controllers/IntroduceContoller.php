@@ -14,7 +14,7 @@ class IntroduceContoller extends Controller
     public function index()
     {            
         $members = \App\Member::all();                       
-        return view('introduce.index',['lv'=>isset(auth()->user()->admin) ? auth()->user()->admin : 0 ]);
+        return view('introduce.index',['lv'=>isset(auth()->user()->admin) ? ((auth()->user()->admin == 1) ? 1 : 0 ) : 0 ]);
     }
     /**
      * Show the form for creating a new resource.
